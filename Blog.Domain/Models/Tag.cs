@@ -2,6 +2,13 @@
 
 public class Tag
 {
-	public int Id { get; set; }
-	public string TagName { get; set; }
+	public Tag(string tagName)
+	{
+		TagName = tagName;
+		Posts = new List<News>();
+	}
+
+	public int Id { get; }
+	public string TagName { get; private set; }
+    public IList<News> Posts { get; }
 }

@@ -8,11 +8,37 @@ namespace Blog.Domain.Models;
 
 public class News
 {
-	public int Id { get; set; }
-	public string Title { get; set; }
-	public string Description { get; set; }
-	public string Content { get; set; }
-	public DateTime PublicationDate { get; set; }
-	public IList<Tag> Tags { get; set; }
-	public Author Author { get; set; }
+	public News(string title, string subject, string content, DateTime publicationDate)
+	{
+		Title = title;
+		Subject = subject;
+		Content = content;
+		PublicationDate = publicationDate;
+		Tags = new List<Tag>();
+		
+	}
+  
+
+    public int Id { get;}
+	public string Title { get; private set; }
+    public string Subject { get; private set; }
+    public string Content { get; private set; }
+	public DateTime PublicationDate { get; private set; }
+	public IList<Tag> Tags { get; private set; }
+	public Author Author { get; private set; }
+
+	public void AddTag(Tag tag)
+	{
+		Tags.Add(tag);
+	}
+
+	public void RemoveTag(Tag tag)
+	{
+		Tags.Remove(tag);
+	}
+
+	public void AddAuthor(Author author)
+	{
+		Author = author;
+	}
 }

@@ -8,9 +8,14 @@ namespace Blog.Domain.Models;
 
 public class Author
 {
-	public class Noticia
+	public Author(string name)
 	{
-		public int Id { get; set; }
-		public string Name { get; set; }
+		Name = name;
+		Posts = new List<News >();
 	}
+
+	public int Id { get; }
+	public string Name { get; private set; }
+	public IList<News> Posts { get; private set; }
+
 }

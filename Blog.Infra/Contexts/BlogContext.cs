@@ -1,10 +1,6 @@
 ﻿using Blog.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Blog.Infra.Contexts
 {
@@ -14,7 +10,7 @@ namespace Blog.Infra.Contexts
 
 		DbSet<Tag> Tags { get; set; }
 		DbSet<Author> Authors { get; set; }
-		DbSet<News> Tidings { get; set; }
+		DbSet<News> Posts { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
