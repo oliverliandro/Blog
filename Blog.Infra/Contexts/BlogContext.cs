@@ -8,9 +8,9 @@ namespace Blog.Infra.Contexts
 	{
 		public BlogContext(DbContextOptions options) : base(options) { }
 
-		DbSet<Tag> Tags { get; set; }
-		DbSet<Author> Authors { get; set; }
-		DbSet<News> Posts { get; set; }
+		public DbSet<Tag> Tags { get; set; }
+		public DbSet<Author> Authors { get; set; }
+		public DbSet<News> Posts { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
